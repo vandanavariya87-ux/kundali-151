@@ -20,6 +20,16 @@ import io
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _PY = os.path.join(_HERE, "py")
 sys.path.insert(0, os.path.join(_PY, "kundali"))
+sys.path.insert(0, os.path.join(_PY, "fonts"))
+
+# Fonts chunks se extract karo (GitHub binary limit bypass)
+try:
+    import NotoSansDevanagari_Regular_loader as _fr
+    import NotoSansDevanagari_Bold_loader as _fb
+    _fr.ensure_font(os.path.join(_PY, "fonts", "NotoSansDevanagari-Regular.ttf"))
+    _fb.ensure_font(os.path.join(_PY, "fonts", "NotoSansDevanagari-Bold.ttf"))
+except Exception:
+    pass
 
 import engine_wrap
 import composer
