@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>जन्म details भरें — आपकी कुंडली बन रही है</title>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '866517331484980');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=866517331484980&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<script src="assets/states-cities.js"></script>
+<style>
+:root{--maroon:#7a1f1f;--maroon-d:#5c1515;--gold:#b48228;--gold-l:#f3dfa0;--bg:#fbf7ef;--card:#fff;--text:#2c1a0e;--muted:#8a6f52;--line:#e8dcc4}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:'Noto Sans Devanagari','Noto Sans','Mangal',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.65}
+.wrap{max-width:560px;margin:0 auto;padding:0 14px}
+header{background:linear-gradient(135deg,var(--maroon),var(--maroon-d));color:#fff;text-align:center;padding:24px 16px 20px;border-bottom:4px solid var(--gold)}
+header h1{margin:0;font-size:26px}
+header p{margin:6px 0 0;color:var(--gold-l);font-size:14.5px}
+main{padding:16px 0 40px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 16px;margin-bottom:16px;box-shadow:0 2px 8px rgba(122,31,31,.08)}
+.card h2{margin:0 0 12px;font-size:20px;color:var(--maroon);border-bottom:2px solid var(--gold);padding-bottom:8px}
+label.lbl{display:block;font-weight:bold;margin:14px 0 6px;color:var(--maroon);font-size:16px}
+input,select{width:100%;min-height:52px;padding:12px 14px;font-size:17px;border:2px solid var(--line);border-radius:10px;font-family:inherit;background:#fff;color:var(--text)}
+input:focus,select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(180,130,40,.25)}
+.hint{font-size:13.5px;color:var(--muted);margin-top:6px}
+.btn{display:block;width:100%;min-height:54px;border:none;border-radius:12px;font-size:19px;font-weight:bold;font-family:inherit;cursor:pointer;margin-top:18px;background:linear-gradient(135deg,var(--maroon),var(--maroon-d));color:#fff;text-decoration:none;text-align:center;line-height:54px}
+.btn:active{transform:scale(.98)}
+.btn-gold{background:linear-gradient(135deg,#e7c65a,#c9982e);color:#3a2413}
+.btn:disabled{opacity:.55}
+.err{background:#fdeaea;border:1px solid #e0a3a3;color:#8c1f1f;border-radius:10px;padding:10px 14px;margin-top:12px;font-size:15px;display:none}
+.ok{background:#eef7ee;border:1px solid #a9cfa9;color:#1f6b1f;border-radius:10px;padding:10px 14px;margin-top:12px;font-size:15px;display:none}
+.prog{height:16px;background:#eee;border-radius:9px;overflow:hidden;margin:14px 0 4px}
+.prog>div{height:100%;width:0;background:linear-gradient(90deg,var(--gold),#c9982e);transition:width .3s}
+.prog-label{text-align:center;font-size:14px;color:var(--muted)}
+.hidden{display:none!important}
+.disclaimer{font-size:13px;color:var(--muted);text-align:center;padding:14px 4px}
+.spin{font-size:44px;display:block;text-align:center;margin:10px 0;animation:spin 2.4s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.failcard{max-width:480px;margin:30px auto;background:#fff;border:2px solid var(--gold);border-radius:14px;padding:28px 22px;text-align:center}
+.failcard h2{color:var(--maroon)}
+.failcard a{color:var(--maroon);font-weight:bold}
+.summary{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.sum{background:#fbf4e2;border:1px solid var(--gold);border-radius:10px;padding:10px 12px;font-size:14.5px}
+.sum b{display:block;color:var(--maroon);font-size:13px;margin-bottom:2px}
+.welcome{text-align:center;padding:8px 0 2px}
+.welcome .tick-big{font-size:40px}
+.welcome h2{margin:6px 0 4px;color:var(--maroon);font-size:22px}
+.welcome p{margin:0;color:var(--muted);font-size:15px}
+.support-box{background:#fff8e7;border:1px solid #e8d5a3;border-radius:12px;padding:16px;margin:16px 0;text-align:center;font-size:14.5px;line-height:1.7}
+.support-box b{color:#7a1f1f}
+.support-box a{color:#7a1f1f;font-weight:bold}
+</style>
+</head>
+<body>
+<header>
+  <h1>📜 संपूर्ण कुंडली विश्लेषण</h1>
+  <p id="gen-sub">पेमेंट सफल ✓</p>
+</header>
+
+<div class="wrap">
+<main id="main-ok">
+
+  <!-- Step 1: Birth details form -->
+  <div id="form-step">
+    <div class="welcome">
+      <div class="tick-big">✅</div>
+      <h2>पेमेंट सफल!</h2>
+      <p id="welcome-name">नमस्ते! अब अपनी जन्म details भरें।</p>
+    </div>
+    <div class="card">
+      <h2>📝 जन्म details</h2>
+      <label class="lbl" for="b-dob">जन्म तिथि *</label>
+      <input type="date" id="b-dob" min="1900-01-01">
+      <label class="lbl" for="b-time">जन्म समय *</label>
+      <input type="time" id="b-time">
+      <div class="hint">सटीक समय न पता हो तो अनुमानित लिखें।</div>
+      <label class="lbl" for="b-state">राज्य *</label>
+      <select id="b-state"><option value="">— राज्य चुनें —</option></select>
+      <label class="lbl" for="b-city">शहर *</label>
+      <select id="b-city" disabled><option value="">— पहले राज्य चुनें —</option></select>
+      <div class="hint" id="city-hint"></div>
+      <div style="margin-top:6px"><a href="#" id="village-toggle" style="font-size:13.5px;color:#7a1f1f">🏘️ मेरा गांव/शहर list में नहीं है?</a></div>
+      <div id="village-box" class="hidden" style="margin-top:8px">
+        <label class="lbl" for="b-village">गांव/कस्बे का नाम *</label>
+        <input id="b-village" placeholder="जैसे: खाटू श्यामजी" autocomplete="off">
+        <div class="hint" id="village-hint"></div>
+      </div>
+      <div class="err" id="bd-err"></div>
+      <button class="btn" id="gen-btn">मेरी कुंडली बनाएं →</button>
+    </div>
+    <p class="disclaimer">⚠️ यह ज्योतिषीय मार्गदर्शन है — चिकित्सा, कानूनी या वित्तीय सलाह नहीं।<br>एक पेमेंट = एक कुंडली।</p>
+  </div>
+
+  <!-- Step 2: Generation progress -->
+  <div id="gen-step" class="hidden">
+    <div class="card">
+      <span class="spin">🕉️</span>
+      <h2 style="text-align:center;border:none">आपकी कुंडली बन रही है…</h2>
+      <div class="prog"><div id="prog-bar"></div></div>
+      <div class="prog-label" id="prog-label">विजेन्द्र शास्त्रीजी के निर्देशन में गणना हो रही है…</div>
+      <p style="text-align:center;font-size:13.5px;color:var(--muted)">इसमें 30-60 सेकंड लग सकते हैं। पेज बंद न करें।</p>
+    </div>
+  </div>
+
+  <!-- Step 3: Download -->
+  <div id="done-step" class="hidden">
+    <div class="card">
+      <h2>✨ आपकी कुंडली तैयार है!</h2>
+      <div class="summary">
+        <div class="sum"><b>लग्न</b><span id="s-lagna">—</span></div>
+        <div class="sum"><b>चंद्र राशि</b><span id="s-moon">—</span></div>
+        <div class="sum"><b>नक्षत्र</b><span id="s-nakshatra">—</span></div>
+        <div class="sum"><b>महादशा</b><span id="s-dasha">—</span></div>
+      </div>
+      <div class="ok" id="pdf-ok" style="display:block">आपकी व्यक्तिगत कुंडली तैयार है! डाउनलोड करें।</div>
+      <div class="err" id="pdf-err"></div>
+      <a class="btn btn-gold hidden" id="dl-btn" href="#" download>⬇️ डाउनलोड करें (PDF)</a>
+    </div>
+  </div>
+
+<div class="support-box">
+  📧 <b>कोई सवाल या दिक्कत?</b><br>
+  कुंडली से जुड़ा कोई प्रश्न हो या PDF डाउनलोड में कोई समस्या आए,<br>
+  तो अपनी details के साथ हमें मेल करें:<br>
+  <a href="mailto:vijendraji51@gmail.com">vijendraji51@gmail.com</a><br>
+  आपको जल्द ही आपकी कुंडली मेल पर भेज दी जाएगी। 🙏
+</div>
+</main>
+
+<div id="main-fail" class="hidden">
+  <div class="failcard">
+    <h2 id="fail-title">लिंक अमान्य है</h2>
+    <p id="fail-msg">यह लिंक या तो गलत है, या इसकी अवधि समाप्त हो गई है।</p>
+    <p>पेमेंट किया था? अपनी details (नाम, मोबाइल) के साथ मेल करें:<br><b><a href="mailto:vijendraji51@gmail.com">vijendraji51@gmail.com</a></b><br>आपकी कुंडली मेल पर भेज दी जाएगी।</p>
+    <p><a href="index.html">← होम पेज पर जाएं</a></p>
+  </div>
+</div>
+</div>
+
+<script>
+(function(){
+'use strict';
+var $=function(id){return document.getElementById(id);};
+var TOKEN=(new URLSearchParams(location.search)).get('t')||'';
+var CUST={name:'',phone:''};
+
+function postJSON(url,body){
+  return fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body||{})})
+    .then(function(r){return r.json().then(function(j){return {s:r.status,j:j};});});
+}
+function setProg(pct,label){
+  $('prog-bar').style.width=Math.max(0,Math.min(100,Math.round(pct)))+'%';
+  if(label)$('prog-label').textContent=label;
+}
+function showFail(title,msg){
+  $('main-ok').classList.add('hidden');
+  $('fail-title').textContent=title;$('fail-msg').innerHTML=msg;
+  $('main-fail').classList.remove('hidden');
+}
+function bdErr(m){var e=$('bd-err');e.textContent=m;e.style.display='block';e.scrollIntoView({block:'nearest',behavior:'smooth'});}
+function bdClear(){$('bd-err').style.display='none';}
+function sanitizeName(n){
+  var s=String(n||'').trim().replace(/\s+/g,'-').replace(/[^a-zA-Z0-9_\u0900-\u097F-]+/g,'');
+  return s||'kundali';
+}
+
+/* ---- state → city cascading ---- */
+function buildStates(){
+  var sel=$('b-state');
+  var states=(typeof STATE_CITIES!=='undefined')?Object.keys(STATE_CITIES):[];
+  states.forEach(function(st){
+    var o=document.createElement('option');o.value=st;o.textContent=st;sel.appendChild(o);
+  });
+  sel.addEventListener('change',function(){
+    var city=$('b-city'),hint=$('city-hint');
+    city.innerHTML='';hint.textContent='';
+    var st=sel.value;
+    if(!st||!STATE_CITIES[st]){
+      city.disabled=true;
+      var o=document.createElement('option');o.value='';o.textContent='— पहले राज्य चुनें —';city.appendChild(o);
+      return;
+    }
+    var list=STATE_CITIES[st];
+    var ph=document.createElement('option');ph.value='';ph.textContent='— शहर चुनें ('+list.length+' शहर) —';city.appendChild(ph);
+    list.forEach(function(c,i){
+      var o=document.createElement('option');o.value=String(i);o.textContent=c[0];city.appendChild(o);
+    });
+    city.disabled=false;
+  });
+  // Village toggle
+  var villageMode=false;
+  $('village-toggle').addEventListener('click',function(e){
+    e.preventDefault();
+    villageMode=!villageMode;
+    $('village-box').classList.toggle('hidden',!villageMode);
+    $('b-city').disabled=villageMode;
+    this.textContent=villageMode?'← शहर list से चुनें':'🏘️ मेरा गांव/शहर list में नहीं है?';
+    if(villageMode){$('city-hint').textContent='';}
+  });
+  // Nominatim fallback for village
+  var nomCache={};
+  function nominatim(q,state){
+    return new Promise(function(resolve){
+      var key=q+'|'+state;
+      if(nomCache[key]!==undefined){resolve(nomCache[key]);return;}
+      var query=encodeURIComponent(q+', '+state+', India');
+      fetch('https://nominatim.openstreetmap.org/search?format=json&limit=5&accept-language=hi&q='+query,{headers:{'Accept':'application/json'}})
+      .then(function(r){return r.ok?r.json():[];})
+      .then(function(arr){
+        var out=null;
+        if(arr&&arr.length){
+          // Pehle asli gaon/shahar dhoondo (hospital, school jaise POI skip karo)
+          var best=null;
+          for(var i=0;i<arr.length;i++){
+            var it=arr[i];
+            var cls=String(it['class']||''),typ=String(it.type||'');
+            if(cls==='place'&&/village|town|city|hamlet|suburb|municipality/i.test(typ)){best=it;break;}
+          }
+          if(!best)best=arr[0];
+          var lat=parseFloat(best.lat),lon=parseFloat(best.lon);
+          if(isFinite(lat)&&isFinite(lon)&&lat>=6&&lat<=38&&lon>=66&&lon<=98){
+            out={lat:lat,lon:lon};
+          }
+        }
+        nomCache[key]=out;resolve(out);
+      })
+      .catch(function(){nomCache[key]=null;resolve(null);});
+    });
+  }
+  window._villageMode=function(){return villageMode;};
+  window._nominatim=nominatim;
+  $('b-city').addEventListener('change',function(){
+    var st=sel.value,idx=this.value,hint=$('city-hint');
+    if(st&&idx!==''&&STATE_CITIES[st]&&STATE_CITIES[st][+idx]){
+      hint.textContent='📍 '+STATE_CITIES[st][+idx][0]+', '+st+' ✓';hint.style.color='#1a7a2e';
+    }else{hint.textContent='';}
+  });
+  try{var d=new Date();$('b-dob').setAttribute('max',d.toISOString().slice(0,10));}catch(e){}
+}
+
+/* ---- init: token verify ---- */
+function start(){
+  if(!TOKEN){showFail('लिंक अमान्य है','यह पेज सीधे नहीं खुल सकता — पेमेंट के बाद मिली लिंक का उपयोग करें।');return;}
+  buildStates();
+  postJSON('/.netlify/functions/verify-token',{token:TOKEN}).then(function(x){
+    if(x.s!==200||!x.j.valid||!x.j.payload)throw new Error('bad-token');
+    var p=x.j.payload;
+    if(!p.name||!p.phone)throw new Error('bad-token');
+    CUST.name=p.name;CUST.phone=p.phone;
+    $('welcome-name').textContent='नमस्ते '+p.name+' जी! अब अपनी जन्म details भरें।';
+    // Purchase pixel index.html par fire ho chuka hai (payment verify ke baad) — yahan dobara nahi
+  }).catch(function(e){
+    showFail('लिंक अमान्य है','यह लिंक या तो गलत है, या इसकी अवधि समाप्त हो गई है (24 घंटे)।<br><br>पेमेंट किया था तो सपोर्ट से संपर्क करें।');
+  });
+}
+
+/* ---- birth form submit → PDF ---- */
+$('gen-btn').addEventListener('click',function(){
+  bdClear();
+  var dob=$('b-dob').value,time=$('b-time').value,
+      state=$('b-state').value,cityIdx=$('b-city').value;
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(dob)){bdErr('कृपया जन्म तिथि चुनें।');return;}
+  if(!/^\d{2}:\d{2}$/.test(time)){bdErr('कृपया जन्म समय चुनें।');return;}
+  if(!state){bdErr('कृपया राज्य चुनें।');return;}
+  var isVillage=window._villageMode&&window._villageMode();
+  var city=null, villageName='';
+  if(isVillage){
+    villageName=$('b-village').value.trim();
+    if(villageName.length<2){bdErr('कृपया गांव/कस्बे का नाम लिखें।');return;}
+  }else{
+    if(cityIdx===''||!STATE_CITIES[state]||!STATE_CITIES[state][+cityIdx]){bdErr('कृपया शहर चुनें।');return;}
+    city=STATE_CITIES[state][+cityIdx]; // [name, lat, lon]
+  }
+  var btn=this;btn.disabled=true;
+  // Village mode: pehle Nominatim se coordinates nikalo
+  function proceedWithGeo(lat,lon,placeName){
+    btn.textContent='कुंडली बन रही है…';
+    doGenerate(dob,time,state,placeName,lat,lon,btn);
+  }
+  if(isVillage){
+    btn.textContent='गांव ढूंढ रहे हैं…';
+    $('village-hint').textContent='ढूंढ रहे हैं…';$('village-hint').style.color='#8a6f52';
+    window._nominatim(villageName,state).then(function(geo){
+      if(geo){
+        $('village-hint').textContent='Got it';$('village-hint').style.color='#1a7a2e';
+        proceedWithGeo(geo.lat,geo.lon,villageName+', '+state);
+      }else{
+        // Nominatim fail → backend khud try karega, village naam bhej do
+        $('village-hint').textContent=''; 
+        proceedWithGeo(null,null,villageName+', '+state);
+      }
+    });
+    return;
+  }
+  proceedWithGeo(city[1],city[2],city[0]+', '+state);
+  return;
+  function doGenerate(dob,time,state,placeName,lat,lon,btn){
+
+  $('form-step').classList.add('hidden');
+  $('gen-step').classList.remove('hidden');
+  setProg(8,'ग्रहों की गणना हो रही है…');
+  var progTimer=setInterval(function(){
+    var w=parseFloat($('prog-bar').style.width)||8;
+    if(w<88){setProg(w+4,['नक्षत्र देखा जा रहा है…','दशा की गणना हो रही है…','योग बन रहे हैं…','उपाय लिखे जा रहे हैं…'][Math.floor(w/22)%4]);}
+  },2500);
+
+  postJSON('/.netlify/functions/generate-kundali',{
+    token:TOKEN,
+    name:CUST.name,phone:CUST.phone,
+    dob:dob,time:time,
+    state:state,place:placeName,city:placeName,
+    lat:lat,lon:lon
+  }).then(function(x){
+    clearInterval(progTimer);
+    if(x.s!==200||!x.j.pdf)throw new Error((x.j&&x.j.error)||'PDF नहीं बन सकी।');
+    setProg(100,'तैयार!');
+    var pdfName='Kundali-'+sanitizeName(CUST.name)+'-Hindi.pdf';
+    var dl=$('dl-btn');
+    dl.href='data:application/pdf;base64,'+x.j.pdf;
+    dl.setAttribute('download',pdfName);
+    dl.classList.remove('hidden');
+    if(x.j.summary){
+      $('s-lagna').textContent=x.j.summary.lagna||'—';
+      $('s-moon').textContent=x.j.summary.moon||'—';
+      $('s-nakshatra').textContent=x.j.summary.nakshatra||'—';
+      $('s-dasha').textContent=x.j.summary.dasha||'—';
+    }
+    $('gen-step').classList.add('hidden');
+    $('done-step').classList.remove('hidden');
+    try{dl.click();}catch(e){}
+  }).catch(function(e){
+    clearInterval(progTimer);
+    $('gen-step').classList.add('hidden');
+    $('form-step').classList.remove('hidden');
+    btn.disabled=false;btn.textContent='मेरी कुंडली बनाएं →';
+    bdErr(e.message||'कुछ गलत हुआ। पुनः प्रयास करें।');
+  });
+  } // end doGenerate
+});
+
+if(document.readyState==='complete'||document.readyState==='interactive'){start();}
+else{document.addEventListener('DOMContentLoaded',start);}
+})();
+</script>
+</body>
+</html>
