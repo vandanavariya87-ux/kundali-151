@@ -116,19 +116,13 @@ input:focus,select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 
     </div>
   </div>
 
-  <!-- Step 3: Download -->
+  <!-- Step 3: Done -->
   <div id="done-step" class="hidden">
     <div class="card">
-      <h2>✨ आपकी कुंडली तैयार है!</h2>
-      <div class="summary">
-        <div class="sum"><b>लग्न</b><span id="s-lagna">—</span></div>
-        <div class="sum"><b>चंद्र राशि</b><span id="s-moon">—</span></div>
-        <div class="sum"><b>नक्षत्र</b><span id="s-nakshatra">—</span></div>
-        <div class="sum"><b>महादशा</b><span id="s-dasha">—</span></div>
-      </div>
-      <div class="ok" id="pdf-ok" style="display:block">आपकी व्यक्तिगत कुंडली तैयार है! डाउनलोड करें।</div>
+      <h2>✅ विवरण मिल गया!</h2>
+      <div class="ok" id="pdf-ok" style="display:block">आपकी व्यक्तिगत कुंडली <b>24 घंटे के अंदर आपके WhatsApp नंबर पर</b> भेज दी जाएगी। 🙏<br><br>कुंडली एकदम सही बने — इसके लिए नीचे बटन दबाकर अपना जन्म विवरण हमें भेज दें:</div>
       <div class="err" id="pdf-err"></div>
-      <a class="btn btn-gold hidden" id="dl-btn" href="#" download>⬇️ डाउनलोड करें (PDF)</a>
+      <a class="btn btn-gold" id="mail-btn" href="#">📧 जन्म विवरण भेजें</a>
     </div>
   </div>
 
@@ -318,37 +312,15 @@ $('gen-btn').addEventListener('click',function(){
     if(w<88){setProg(w+4,['नक्षत्र देखा जा रहा है…','दशा की गणना हो रही है…','योग बन रहे हैं…','उपाय लिखे जा रहे हैं…'][Math.floor(w/22)%4]);}
   },2500);
 
-  postJSON('/.netlify/functions/generate-kundali',{
-    token:TOKEN,
-    name:CUST.name,phone:CUST.phone,
-    dob:dob,time:time,
-    state:state,place:placeName,city:placeName,
-    lat:lat,lon:lon
-  }).then(function(x){
-    clearInterval(progTimer);
-    if(x.s!==200||!x.j.pdf)throw new Error((x.j&&x.j.error)||'PDF नहीं बन सकी।');
-    setProg(100,'तैयार!');
-    var pdfName='Kundali-'+sanitizeName(CUST.name)+'-Hindi.pdf';
-    var dl=$('dl-btn');
-    dl.href='data:application/pdf;base64,'+x.j.pdf;
-    dl.setAttribute('download',pdfName);
-    dl.classList.remove('hidden');
-    if(x.j.summary){
-      $('s-lagna').textContent=x.j.summary.lagna||'—';
-      $('s-moon').textContent=x.j.summary.moon||'—';
-      $('s-nakshatra').textContent=x.j.summary.nakshatra||'—';
-      $('s-dasha').textContent=x.j.summary.dasha||'—';
-    }
-    $('gen-step').classList.add('hidden');
-    $('done-step').classList.remove('hidden');
-    try{dl.click();}catch(e){}
-  }).catch(function(e){
-    clearInterval(progTimer);
-    $('gen-step').classList.add('hidden');
-    $('form-step').classList.remove('hidden');
-    btn.disabled=false;btn.textContent='मेरी कुंडली बनाएं →';
-    bdErr(e.message||'कुछ गलत हुआ। पुनः प्रयास करें।');
-  });
+  // Route A (manual WhatsApp delivery): Netlify Functions par Python nahi chalta,
+  // isliye server-generation hata diya. Customer ka janm-vivaran seller ko email se milega.
+  clearInterval(progTimer);
+  setProg(100,'पूरा!');
+  var mailSub=encodeURIComponent('Kundali details - '+CUST.phone);
+  var mailBody=encodeURIComponent('नमस्ते! मेरी कुंडली के लिए विवरण:\nनाम: '+CUST.name+'\nमोबाइल: '+CUST.phone+'\nजन्म तिथि: '+dob+'\nजन्म समय: '+time+'\nजन्म स्थान: '+placeName+' ('+state+')');
+  $('mail-btn').href='mailto:vijendraji51@gmail.com?subject='+mailSub+'&body='+mailBody;
+  $('gen-step').classList.add('hidden');
+  $('done-step').classList.remove('hidden');
   } // end doGenerate
 });
 
