@@ -1,1 +1,7 @@
-{"dependencies":{},"description":"Hindi Sampurn Kundali ₹151 — Razorpay payment + auto PDF funnel","name":"kundali-hindi-151-razorpay","version":"1.0.0"}
+{
+  "dependencies": {},
+  "description": "₹51 Gujarati Janm Kundali — Netlify Functions backend (Razorpay + HMAC tokens)",
+  "name": "kundali-51-netlify",
+  "private": true,
+  "version": "1.0.0"
+}

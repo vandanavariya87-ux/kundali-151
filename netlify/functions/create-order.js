@@ -1,18 +1,18 @@
 // POST /.netlify/functions/create-order   { name, phone }
-// Hindi Kundali ₹151 — naya flow: sirf NAAM + MOBILE payment se pehle.
-// Birth details (dob/time/state/city) generate.html par payment ke baad.
-// Razorpay order notes me naam+phone — dashboard me lead dikhta hai.
-// Amount: 15100 paise (₹151) — server-side FIXED.
+// LEAD-FIRST flow: sirf naam + mobile (email nahi). ₹51 (5100 paise) FIXED server-side.
+// Lead = Razorpay order ke notes me {name, phone} — payment ho ya na ho,
+// Razorpay dashboard me har order lead ki tarah dikhta hai (WhatsApp follow-up).
 'use strict';
 const crypto = require('crypto');
 const { rzpayRequest, jsonOut, configured, PRICE_PAISE } = require('./lib/token');
 
-function validNamePhone(name, phone) {
-  const n = String(name || '').trim().slice(0, 60);
-  const p = String(phone || '').trim();
-  if (n.length < 2) return null;
-  if (!/^[6-9]\d{9}$/.test(p)) return null;
-  return { name: n, phone: p };
+function validLead(input) {
+  if (!input || typeof input !== 'object') return null;
+  const name = String(input.name || '').trim().slice(0, 60);
+  const phone = String(input.phone || '').trim();
+  if (name.length < 2) return null;
+  if (!/^[6-9]\d{9}$/.test(phone)) return null;
+  return { name, phone };
 }
 
 exports.handler = async (event) => {
@@ -22,24 +22,24 @@ exports.handler = async (event) => {
   let input = {};
   try { input = JSON.parse(event.body || '{}'); } catch (e) { return jsonOut(400, { error: 'Invalid JSON' }); }
 
-  const vp = validNamePhone(input.name, input.phone);
-  if (!vp) {
-    return jsonOut(400, { error: 'कृपया सही नाम और 10 अंक का मोबाइल नंबर लिखें।' });
+  const lead = validLead(input);
+  if (!lead) {
+    return jsonOut(400, { error: 'Naam ane 10 ank no mobile number sahu lakho' });
   }
 
-  const receipt = 'kh151_' + Math.floor(Date.now() / 1000) + '_' +
-    crypto.createHash('md5').update(vp.phone + Date.now()).digest('hex').slice(0, 8);
+  const receipt = 'k51_' + Math.floor(Date.now() / 1000) + '_' +
+    crypto.createHash('md5').update(lead.phone + Date.now()).digest('hex').slice(0, 8);
 
   let r;
   try {
     r = await rzpayRequest('POST', '/v1/orders', {
-      amount: PRICE_PAISE,          // 15100 — server-side fixed, client pe bharosa nahi
+      amount: PRICE_PAISE,          // 5100 — server-side fixed, client pe bharosa nahi
       currency: 'INR',
       receipt: receipt,
       notes: {
-        product: 'kundali-hindi-sampurn-151',
-        name: vp.name,
-        phone: vp.phone,
+        product: 'kundali-51-sankshipt',
+        name: lead.name,
+        phone: lead.phone,
       },
     });
   } catch (e) {
@@ -50,15 +50,15 @@ exports.handler = async (event) => {
     return jsonOut(502, { error: 'Order create failed' });
   }
   if (Number(r.json.amount) !== PRICE_PAISE) {
-    return jsonOut(502, { error: 'Order amount mismatch' });
+    return jsonOut(502, { error: 'Order amount mismatch' });  // Razorpay ne jo banaya wo bhi check
   }
 
   return jsonOut(200, {
     orderId: r.json.id,
     amount: r.json.amount,
-    keyId: process.env.RAZORPAY_KEY_ID,
-    name: vp.name,
-    phone: vp.phone,
-    description: 'Sampurn Kundali Vishleshan — Hindi PDF',
+    keyId: process.env.RAZORPAY_KEY_ID,   // public Key ID — frontend ke liye safe (secret kabhi nahi)
+    name: lead.name,
+    phone: lead.phone,
+    description: 'Janm Kundali (Sankshipt) — Gujarati PDF',
   });
 };

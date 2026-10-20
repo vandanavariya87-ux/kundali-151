@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="gu">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>जन्म details भरें — आपकी कुंडली बन रही है</title>
+<title>તમારી કુંડળી બની રહી છે… — ₹૫૧</title>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -21,11 +21,10 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=866517331484980&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-<script src="assets/states-cities.js"></script>
 <style>
-:root{--maroon:#7a1f1f;--maroon-d:#5c1515;--gold:#b48228;--gold-l:#f3dfa0;--bg:#fbf7ef;--card:#fff;--text:#2c1a0e;--muted:#8a6f52;--line:#e8dcc4}
+:root{--maroon:#7a1f1f;--maroon-d:#5c1515;--gold:#d4af37;--gold-l:#f3dfa0;--bg:#fbf7ef;--card:#fff;--text:#3a2413;--muted:#8a6f52;--line:#e8dcc4}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;font-family:'Noto Sans Devanagari','Noto Sans','Mangal',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.65}
+body{margin:0;font-family:'Noto Sans Gujarati','Noto Sans','Mukta','Shruti',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6}
 .wrap{max-width:560px;margin:0 auto;padding:0 14px}
 header{background:linear-gradient(135deg,var(--maroon),var(--maroon-d));color:#fff;text-align:center;padding:24px 16px 20px;border-bottom:4px solid var(--gold)}
 header h1{margin:0;font-size:26px}
@@ -33,18 +32,28 @@ header p{margin:6px 0 0;color:var(--gold-l);font-size:14.5px}
 main{padding:16px 0 40px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 16px;margin-bottom:16px;box-shadow:0 2px 8px rgba(122,31,31,.08)}
 .card h2{margin:0 0 12px;font-size:20px;color:var(--maroon);border-bottom:2px solid var(--gold);padding-bottom:8px}
+.vrow{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed var(--line);font-size:15.5px}
+.vrow:last-child{border-bottom:none}
+.vrow .k{color:var(--muted)}
+.vrow .v{font-weight:bold;text-align:right}
+.btn{display:block;width:100%;min-height:54px;border:none;border-radius:12px;font-size:19px;font-weight:bold;font-family:inherit;cursor:pointer;margin-top:14px;background:linear-gradient(135deg,var(--maroon),var(--maroon-d));color:#fff}
+.btn:active{transform:scale(.98)}
+.btn-gold{background:linear-gradient(135deg,#e7c65a,#c9982e);color:#3a2413;text-decoration:none;text-align:center;line-height:54px;display:block}
+.btn-outline{background:#fff;color:var(--maroon);border:2px solid var(--maroon);margin-top:10px}
+.btn:disabled{opacity:.55}
 label.lbl{display:block;font-weight:bold;margin:14px 0 6px;color:var(--maroon);font-size:16px}
 input,select{width:100%;min-height:52px;padding:12px 14px;font-size:17px;border:2px solid var(--line);border-radius:10px;font-family:inherit;background:#fff;color:var(--text)}
-input:focus,select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(180,130,40,.25)}
+input:focus,select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.25)}
 .hint{font-size:13.5px;color:var(--muted);margin-top:6px}
-.btn{display:block;width:100%;min-height:54px;border:none;border-radius:12px;font-size:19px;font-weight:bold;font-family:inherit;cursor:pointer;margin-top:18px;background:linear-gradient(135deg,var(--maroon),var(--maroon-d));color:#fff;text-decoration:none;text-align:center;line-height:54px}
-.btn:active{transform:scale(.98)}
-.btn-gold{background:linear-gradient(135deg,#e7c65a,#c9982e);color:#3a2413}
-.btn:disabled{opacity:.55}
+.hint.ok{color:#1a7a2e;font-weight:600}
+.toggle-link{display:inline-block;margin-top:10px;color:var(--maroon);font-weight:bold;font-size:15px;text-decoration:underline;cursor:pointer}
 .err{background:#fdeaea;border:1px solid #e0a3a3;color:#8c1f1f;border-radius:10px;padding:10px 14px;margin-top:12px;font-size:15px;display:none}
 .ok{background:#eef7ee;border:1px solid #a9cfa9;color:#1f6b1f;border-radius:10px;padding:10px 14px;margin-top:12px;font-size:15px;display:none}
+.summary{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.sum{background:#fbf4e2;border:1px solid var(--gold);border-radius:10px;padding:10px 12px;font-size:14.5px}
+.sum b{display:block;color:var(--maroon);font-size:13px;margin-bottom:2px}
 .prog{height:16px;background:#eee;border-radius:9px;overflow:hidden;margin:14px 0 4px}
-.prog>div{height:100%;width:0;background:linear-gradient(90deg,var(--gold),#c9982e);transition:width .3s}
+.prog>div{height:100%;width:0;background:linear-gradient(90deg,var(--gold),#c9982e);transition:width .2s}
 .prog-label{text-align:center;font-size:14px;color:var(--muted)}
 .hidden{display:none!important}
 .disclaimer{font-size:13px;color:var(--muted);text-align:center;padding:14px 4px}
@@ -53,109 +62,130 @@ input:focus,select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 
 .failcard{max-width:480px;margin:30px auto;background:#fff;border:2px solid var(--gold);border-radius:14px;padding:28px 22px;text-align:center}
 .failcard h2{color:var(--maroon)}
 .failcard a{color:var(--maroon);font-weight:bold}
-.summary{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
-.sum{background:#fbf4e2;border:1px solid var(--gold);border-radius:10px;padding:10px 12px;font-size:14.5px}
-.sum b{display:block;color:var(--maroon);font-size:13px;margin-bottom:2px}
-.welcome{text-align:center;padding:8px 0 2px}
-.welcome .tick-big{font-size:40px}
-.welcome h2{margin:6px 0 4px;color:var(--maroon);font-size:22px}
-.welcome p{margin:0;color:var(--muted);font-size:15px}
-.support-box{background:#fff8e7;border:1px solid #e8d5a3;border-radius:12px;padding:16px;margin:16px 0;text-align:center;font-size:14.5px;line-height:1.7}
-.support-box b{color:#7a1f1f}
-.support-box a{color:#7a1f1f;font-weight:bold}
 </style>
 </head>
 <body>
 <header>
-  <h1>📜 संपूर्ण कुंडली विश्लेषण</h1>
-  <p id="gen-sub">पेमेंट सफल ✓</p>
+  <h1>📜 તમારી જન્મકુંડળી</h1>
+  <p id="gen-sub">પેમેન્ટ સફળ ✓ — હવે તમારી કુંડળી બની રહી છે</p>
 </header>
 
 <div class="wrap">
 <main id="main-ok">
-
-  <!-- Step 1: Birth details form -->
-  <div id="form-step">
-    <div class="welcome">
-      <div class="tick-big">✅</div>
-      <h2>पेमेंट सफल!</h2>
-      <p id="welcome-name">नमस्ते! अब अपनी जन्म details भरें।</p>
-    </div>
-    <div class="card">
-      <h2>📝 जन्म details</h2>
-      <label class="lbl" for="b-dob">जन्म तिथि *</label>
-      <input type="date" id="b-dob" min="1900-01-01">
-      <label class="lbl" for="b-time">जन्म समय *</label>
-      <input type="time" id="b-time">
-      <div class="hint">सटीक समय न पता हो तो अनुमानित लिखें।</div>
-      <label class="lbl" for="b-state">राज्य *</label>
-      <select id="b-state"><option value="">— राज्य चुनें —</option></select>
-      <label class="lbl" for="b-city">शहर *</label>
-      <select id="b-city" disabled><option value="">— पहले राज्य चुनें —</option></select>
-      <div class="hint" id="city-hint"></div>
-      <div style="margin-top:6px"><a href="#" id="village-toggle" style="font-size:13.5px;color:#7a1f1f">🏘️ मेरा गांव/शहर list में नहीं है?</a></div>
-      <div id="village-box" class="hidden" style="margin-top:8px">
-        <label class="lbl" for="b-village">गांव/कस्बे का नाम *</label>
-        <input id="b-village" placeholder="जैसे: खाटू श्यामजी" autocomplete="off">
-        <div class="hint" id="village-hint"></div>
-      </div>
-      <div class="err" id="bd-err"></div>
-      <button class="btn" id="gen-btn">मेरी कुंडली बनाएं →</button>
-    </div>
-    <p class="disclaimer">⚠️ यह ज्योतिषीय मार्गदर्शन है — चिकित्सा, कानूनी या वित्तीय सलाह नहीं।<br>एक पेमेंट = एक कुंडली।</p>
+  <div class="card hidden" id="details-card">
+    <h2>👤 તમારી વિગતો</h2>
+    <div class="vrow"><span class="k">નામ</span><span class="v" id="v-name">—</span></div>
+    <div class="vrow"><span class="k">જન્મ તારીખ</span><span class="v" id="v-dob">—</span></div>
+    <div class="vrow"><span class="k">જન્મ સમય</span><span class="v" id="v-time">—</span></div>
+    <div class="vrow"><span class="k">જન્મ સ્થળ</span><span class="v" id="v-place">—</span></div>
   </div>
 
-  <!-- Step 2: Generation progress -->
-  <div id="gen-step" class="hidden">
-    <div class="card">
+  <div class="card hidden" id="birth-card">
+    <h2>📝 જન્મ વિગતો ભરો</h2>
+    <label class="lbl" for="b-dob">જન્મ તારીખ *</label>
+    <input type="date" id="b-dob" min="1900-01-01">
+
+    <label class="lbl" for="b-time">જન્મ સમય *</label>
+    <input type="time" id="b-time">
+    <div class="hint">ચોક્કસ સમય ખબર ન હોય તો અંદાજિત લખો (ફળ એટલું સચોટ નહીં હોય).</div>
+
+    <div id="box1">
+      <label class="lbl" for="b-place">જન્મ સ્થળ *</label>
+      <input type="text" id="b-place" list="town-datalist" autocomplete="off" placeholder="તાલુકો/શહેર શોધો…">
+      <datalist id="town-datalist"></datalist>
+      <div class="hint">તમારો તાલુકો કે શહેર લખો અથવા યાદીમાંથી પસંદ કરો.</div>
+      <div class="hint ok" id="place-found" style="display:none"></div>
+      <a class="toggle-link" id="show-box2">મારું ગામ/શહેર યાદીમાં નથી →</a>
+    </div>
+
+    <div id="box2" class="hidden">
+      <label class="lbl" for="b-village">ગામનું નામ *</label>
+      <input type="text" id="b-village" autocomplete="off" placeholder="દા.ત. રામપુરા">
+      <label class="lbl" for="b-taluka">તાલુકો *</label>
+      <select id="b-taluka"></select>
+      <div class="hint">જિલ્લો: <b id="b-district">—</b></div>
+      <div class="hint">ગણતરી તાલુકાના સ્થાન પરથી થશે — કુંડળી માટે આ પૂરતું સચોટ છે.</div>
+      <a class="toggle-link" id="show-box1">← યાદીમાંથી પસંદ કરો</a>
+    </div>
+
+    <div class="err" id="bd-err"></div>
+    <button class="btn" id="bd-btn">કુંડળી બનાવો →</button>
+  </div>
+
+  <div class="card hidden" id="gen-card">
+    <div id="gen-loading">
       <span class="spin">🕉️</span>
-      <h2 style="text-align:center;border:none">आपकी कुंडली बन रही है…</h2>
+      <h2 style="text-align:center;border:none">તમારી કુંડળી બની રહી છે…</h2>
       <div class="prog"><div id="prog-bar"></div></div>
-      <div class="prog-label" id="prog-label">विजेन्द्र शास्त्रीजी के निर्देशन में गणना हो रही है…</div>
-      <p style="text-align:center;font-size:13.5px;color:var(--muted)">इसमें 30-60 सेकंड लग सकते हैं। पेज बंद न करें।</p>
+      <div class="prog-label" id="prog-label">ગ્રહોની ગણતરી થઈ રહી છે…</div>
     </div>
+    <div id="gen-done" class="hidden">
+      <h2>✨ તમારી કુંડળી તૈયાર થઈ ગઈ</h2>
+      <div class="summary">
+        <div class="sum"><b>લગ્ન</b><span id="s-lagna">—</span></div>
+        <div class="sum"><b>ચંદ્ર રાશિ</b><span id="s-moon">—</span></div>
+        <div class="sum"><b>નક્ષત્ર</b><span id="s-nakshatra">—</span></div>
+        <div class="sum"><b>મહાદશા</b><span id="s-dasha">—</span></div>
+      </div>
+    </div>
+    <div class="err" id="pdf-err"></div>
+    <div class="ok" id="pdf-ok"></div>
+    <a class="btn btn-gold hidden" id="dl-btn" href="#" download>⬇️ ડાઉનલોડ કરો (૧૨ પાનાં PDF)</a>
+    <button class="btn btn-outline hidden" id="wa-btn">📲 WhatsApp પર શેર કરો</button>
   </div>
 
-  <!-- Step 3: Done -->
-  <div id="done-step" class="hidden">
-    <div class="card">
-      <h2>✅ विवरण मिल गया!</h2>
-      <div class="ok" id="pdf-ok" style="display:block">आपकी व्यक्तिगत कुंडली <b>24 घंटे के अंदर आपके WhatsApp नंबर पर</b> भेज दी जाएगी। 🙏<br><br>कुंडली एकदम सही बने — इसके लिए नीचे बटन दबाकर अपना जन्म विवरण हमें भेज दें:</div>
-      <div class="err" id="pdf-err"></div>
-      <a class="btn btn-gold" id="mail-btn" href="#">📧 जन्म विवरण भेजें</a>
-    </div>
-  </div>
-
-<div class="support-box">
-  📧 <b>कोई सवाल या दिक्कत?</b><br>
-  कुंडली से जुड़ा कोई प्रश्न हो या PDF डाउनलोड में कोई समस्या आए,<br>
-  तो अपनी details के साथ हमें मेल करें:<br>
-  <a href="mailto:vijendraji51@gmail.com">vijendraji51@gmail.com</a><br>
-  आपको जल्द ही आपकी कुंडली मेल पर भेज दी जाएगी। 🙏
-</div>
+  <p class="disclaimer">⚠️ આ સામાન્ય જ્યોતિષીય માર્ગદર્શન છે — તબીબી, કાનૂની કે નાણાકીય સલાહ નથી.<br>એક પેમેન્ટ = એક કુંડળી.</p>
 </main>
 
 <div id="main-fail" class="hidden">
   <div class="failcard">
-    <h2 id="fail-title">लिंक अमान्य है</h2>
-    <p id="fail-msg">यह लिंक या तो गलत है, या इसकी अवधि समाप्त हो गई है।</p>
-    <p>पेमेंट किया था? अपनी details (नाम, मोबाइल) के साथ मेल करें:<br><b><a href="mailto:vijendraji51@gmail.com">vijendraji51@gmail.com</a></b><br>आपकी कुंडली मेल पर भेज दी जाएगी।</p>
-    <p><a href="index.html">← होम पेज पर जाएं</a></p>
+    <h2 id="fail-title">લિંક અમાન્ય છે</h2>
+    <p id="fail-msg">આ લિંક કાં તો ખોટી છે, કાં તેની મુદત પૂરી થઈ ગઈ છે.</p>
+    <p><a href="index.html#order">← હોમ પેજ પર જાઓ</a></p>
   </div>
 </div>
 </div>
 
+<script src="assets/js/astronomy.browser.min.js"></script>
+<script src="assets/js/towns.js"></script>
+<script src="assets/js/engine.js"></script>
+<script src="assets/js/analysis.js"></script>
+<script src="assets/js/content.js"></script>
+<script src="assets/js/varshphal-content.js"></script>
+<script src="assets/js/pdfkit-bundle.js"></script>
+<script src="assets/js/fonts.js"></script>
+<script src="assets/js/pdfkit-core.js"></script>
+<script src="assets/js/pdfkit-sankshipt.js"></script>
 <script>
+/* generate.html — token-gated kundali (Blobs-free).
+   Payment ke baad ?t= me payment-PROOF token aata hai → pehle janm vigat ka
+   form dikhta hai (neeche), submit par generation token banta hai → PDF.
+   Seedha generation token se khola ho to form skip karke turant PDF banta hai. */
 (function(){
 'use strict';
 var $=function(id){return document.getElementById(id);};
-var TOKEN=(new URLSearchParams(location.search)).get('t')||'';
-var CUST={name:'',phone:''};
+var K51_TOKEN=(new URLSearchParams(location.search)).get('t')||'';
+var K51_BIRTH=null;
+var K51_PAYLOAD=null;
+var pdfName='';
 
-function postJSON(url,body){
-  return fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body||{})})
-    .then(function(r){return r.json().then(function(j){return {s:r.status,j:j};});});
+function engineOK(){return !!(window.KundaliEngine&&typeof window.KundaliEngine.computeChart==='function');}
+function pdfOK(){return !!(window.KundaliPDFKit&&typeof window.KundaliPDFKit.generateSankshipt==='function');}
+function g(x){
+  if(x===null||x===undefined||x==='')return '—';
+  var s=String(x);
+  if(/[\u0A80-\u0AFF]/.test(s))return s;
+  if(engineOK()&&typeof window.KundaliEngine.D==='function'){try{return window.KundaliEngine.D(s);}catch(e){return s;}}
+  return s;
 }
+function pick(obj,paths){
+  for(var i=0;i<paths.length;i++){var parts=paths[i].split('.'),cur=obj;
+    for(var j=0;j<parts.length&&cur!=null;j++)cur=cur[parts[j]];
+    if(cur!==null&&cur!==undefined&&cur!=='')return cur;}
+  return null;
+}
+function pdfMsg(kind,msg){var e=$(kind==='err'?'pdf-err':'pdf-ok');e.textContent=msg;e.style.display='block';}
+function sanitizeName(n){var s=String(n||'').trim().replace(/\s+/g,'-').replace(/[^\p{L}\p{N}_-]+/gu,'');return s||'kundali';}
 function setProg(pct,label){
   $('prog-bar').style.width=Math.max(0,Math.min(100,Math.round(pct)))+'%';
   if(label)$('prog-label').textContent=label;
@@ -165,165 +195,315 @@ function showFail(title,msg){
   $('fail-title').textContent=title;$('fail-msg').innerHTML=msg;
   $('main-fail').classList.remove('hidden');
 }
-function bdErr(m){var e=$('bd-err');e.textContent=m;e.style.display='block';e.scrollIntoView({block:'nearest',behavior:'smooth'});}
-function bdClear(){$('bd-err').style.display='none';}
-function sanitizeName(n){
-  var s=String(n||'').trim().replace(/\s+/g,'-').replace(/[^a-zA-Z0-9_\u0900-\u097F-]+/g,'');
-  return s||'kundali';
+function fail(msg){
+  $('gen-loading').style.display='none';
+  pdfMsg('err',msg);
+}
+function postJSON(url,body){
+  return fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body||{})})
+    .then(function(r){return r.json().then(function(j){return {s:r.status,j:j};});});
 }
 
-/* ---- state → city cascading ---- */
-function buildStates(){
-  var sel=$('b-state');
-  var states=(typeof STATE_CITIES!=='undefined')?Object.keys(STATE_CITIES):[];
-  states.forEach(function(st){
-    var o=document.createElement('option');o.value=st;o.textContent=st;sel.appendChild(o);
-  });
-  sel.addEventListener('change',function(){
-    var city=$('b-city'),hint=$('city-hint');
-    city.innerHTML='';hint.textContent='';
-    var st=sel.value;
-    if(!st||!STATE_CITIES[st]){
-      city.disabled=true;
-      var o=document.createElement('option');o.value='';o.textContent='— पहले राज्य चुनें —';city.appendChild(o);
-      return;
-    }
-    var list=STATE_CITIES[st];
-    var ph=document.createElement('option');ph.value='';ph.textContent='— शहर चुनें ('+list.length+' शहर) —';city.appendChild(ph);
-    list.forEach(function(c,i){
-      var o=document.createElement('option');o.value=String(i);o.textContent=c[0];city.appendChild(o);
-    });
-    city.disabled=false;
-  });
-  // Village toggle
-  var villageMode=false;
-  $('village-toggle').addEventListener('click',function(e){
-    e.preventDefault();
-    villageMode=!villageMode;
-    $('village-box').classList.toggle('hidden',!villageMode);
-    $('b-city').disabled=villageMode;
-    this.textContent=villageMode?'← शहर list से चुनें':'🏘️ मेरा गांव/शहर list में नहीं है?';
-    if(villageMode){$('city-hint').textContent='';}
-  });
-  // Nominatim fallback for village
-  var nomCache={};
-  function nominatim(q,state){
-    return new Promise(function(resolve){
-      var key=q+'|'+state;
-      if(nomCache[key]!==undefined){resolve(nomCache[key]);return;}
-      var query=encodeURIComponent(q+', '+state+', India');
-      fetch('https://nominatim.openstreetmap.org/search?format=json&limit=5&accept-language=hi&q='+query,{headers:{'Accept':'application/json'}})
-      .then(function(r){return r.ok?r.json():[];})
-      .then(function(arr){
-        var out=null;
-        if(arr&&arr.length){
-          // Pehle asli gaon/shahar dhoondo (hospital, school jaise POI skip karo)
-          var best=null;
-          for(var i=0;i<arr.length;i++){
-            var it=arr[i];
-            var cls=String(it['class']||''),typ=String(it.type||'');
-            if(cls==='place'&&/village|town|city|hamlet|suburb|municipality/i.test(typ)){best=it;break;}
-          }
-          if(!best)best=arr[0];
-          var lat=parseFloat(best.lat),lon=parseFloat(best.lon);
-          if(isFinite(lat)&&isFinite(lon)&&lat>=6&&lat<=38&&lon>=66&&lon<=98){
-            out={lat:lat,lon:lon};
-          }
-        }
-        nomCache[key]=out;resolve(out);
-      })
-      .catch(function(){nomCache[key]=null;resolve(null);});
-    });
-  }
-  window._villageMode=function(){return villageMode;};
-  window._nominatim=nominatim;
-  $('b-city').addEventListener('change',function(){
-    var st=sel.value,idx=this.value,hint=$('city-hint');
-    if(st&&idx!==''&&STATE_CITIES[st]&&STATE_CITIES[st][+idx]){
-      hint.textContent='📍 '+STATE_CITIES[st][+idx][0]+', '+st+' ✓';hint.style.color='#1a7a2e';
-    }else{hint.textContent='';}
-  });
-  try{var d=new Date();$('b-dob').setAttribute('max',d.toISOString().slice(0,10));}catch(e){}
+function fillDetails(b){
+  $('v-name').textContent=b.name||'—';
+  $('v-dob').textContent=b.dob||'—';
+  $('v-time').textContent=b.time||'—';
+  $('v-place').textContent=b.place||'—';
 }
 
-/* ---- init: token verify ---- */
 function start(){
-  if(!TOKEN){showFail('लिंक अमान्य है','यह पेज सीधे नहीं खुल सकता — पेमेंट के बाद मिली लिंक का उपयोग करें।');return;}
-  buildStates();
-  postJSON('/.netlify/functions/verify-token',{token:TOKEN}).then(function(x){
+  if(!K51_TOKEN){showFail('લિંક અમાન્ય છે','આ પેજ સીધું ખોલી શકાતું નથી — પેમેન્ટ પછી મળેલી લિંક વાપરો.');return;}
+  // 0) token verify karo
+  postJSON('/.netlify/functions/verify-token',{token:K51_TOKEN}).then(function(x){
     if(x.s!==200||!x.j.valid||!x.j.payload)throw new Error('bad-token');
     var p=x.j.payload;
-    if(!p.name||!p.phone)throw new Error('bad-token');
-    CUST.name=p.name;CUST.phone=p.phone;
-    $('welcome-name').textContent='नमस्ते '+p.name+' जी! अब अपनी जन्म details भरें।';
-    // Purchase pixel index.html par fire ho chuka hai (payment verify ke baad) — yahan dobara nahi
+    // Meta Purchase — payment ho chuka hai; har token pe sirf ek baar fire karo
+    try{
+      var pk='k51_purch_'+K51_TOKEN;
+      if(window.sessionStorage&&!sessionStorage.getItem(pk)){
+        sessionStorage.setItem(pk,'1');
+        if(window.fbq)fbq('track','Purchase',{value:51,currency:'INR'});
+      }
+    }catch(e){}
+    if(p.dob&&p.time&&isFinite(p.lat)&&isFinite(p.lon)){
+      // generation token → janm vigat pehle se hai → seedha PDF banao
+      K51_BIRTH=p;
+      fillDetails(p);
+      $('details-card').classList.remove('hidden');
+      $('gen-card').classList.remove('hidden');
+      generate();
+    }else{
+      // payment token → pehle janm vigat ka form dikhao
+      K51_PAYLOAD=p;
+      if(p.name)$('gen-sub').textContent='પેમેન્ટ સફળ ✓ — '+p.name+', તમારી કુંડળી એક સ્ટેપ દૂર છે';
+      initBirthForm();
+      $('birth-card').classList.remove('hidden');
+    }
   }).catch(function(e){
-    showFail('लिंक अमान्य है','यह लिंक या तो गलत है, या इसकी अवधि समाप्त हो गई है (24 घंटे)।<br><br>पेमेंट किया था तो सपोर्ट से संपर्क करें।');
+    if(e&&e.message==='bad-token'){
+      showFail('લિંક અમાન્ય છે','આ લિંક કાં તો ખોટી છે, કાં તેની મુદત પૂરી થઈ ગઈ છે.<br><br>પેમેન્ટ કર્યું હોય તો સપોર્ટનો સંપર્ક કરો.');
+    }else{
+      showFail('ભૂલ થઈ','સર્વર સાથે જોડાણ થયું નથી. થોડી વાર પછી ફરી પ્રયાસ કરો.');
+    }
   });
 }
 
-/* ---- birth form submit → PDF ---- */
-$('gen-btn').addEventListener('click',function(){
-  bdClear();
-  var dob=$('b-dob').value,time=$('b-time').value,
-      state=$('b-state').value,cityIdx=$('b-city').value;
-  if(!/^\d{4}-\d{2}-\d{2}$/.test(dob)){bdErr('कृपया जन्म तिथि चुनें।');return;}
-  if(!/^\d{2}:\d{2}$/.test(time)){bdErr('कृपया जन्म समय चुनें।');return;}
-  if(!state){bdErr('कृपया राज्य चुनें।');return;}
-  var isVillage=window._villageMode&&window._villageMode();
-  var city=null, villageName='';
-  if(isVillage){
-    villageName=$('b-village').value.trim();
-    if(villageName.length<2){bdErr('कृपया गांव/कस्बे का नाम लिखें।');return;}
-  }else{
-    if(cityIdx===''||!STATE_CITIES[state]||!STATE_CITIES[state][+cityIdx]){bdErr('कृपया शहर चुनें।');return;}
-    city=STATE_CITIES[state][+cityIdx]; // [name, lat, lon]
+/* ================= જન્મ વિગત ફોર્મ (payment token wali state) ================= */
+function packTown(t){return {name:t.name,district:t.district,lat:t.lat,lon:t.lon};}
+function findTown(q){
+  q=(q||'').trim();
+  if(!q)return null;
+  var towns=window.KundaliTowns||[],exact=null,i;
+  for(i=0;i<towns.length;i++){
+    if(towns[i].name===q){exact=towns[i];break;}
   }
-  var btn=this;btn.disabled=true;
-  // Village mode: pehle Nominatim se coordinates nikalo
-  function proceedWithGeo(lat,lon,placeName){
-    btn.textContent='कुंडली बन रही है…';
-    doGenerate(dob,time,state,placeName,lat,lon,btn);
+  if(exact)return packTown(exact);
+  var ql=q.toLowerCase(),cands=[];
+  for(i=0;i<towns.length;i++){
+    var nm=String(towns[i].name||'').toLowerCase();
+    if(nm&&ql.indexOf(nm)!==-1){cands.push({t:towns[i],pos:ql.indexOf(nm)});}
   }
-  if(isVillage){
-    btn.textContent='गांव ढूंढ रहे हैं…';
-    $('village-hint').textContent='ढूंढ रहे हैं…';$('village-hint').style.color='#8a6f52';
-    window._nominatim(villageName,state).then(function(geo){
-      if(geo){
-        $('village-hint').textContent='Got it';$('village-hint').style.color='#1a7a2e';
-        proceedWithGeo(geo.lat,geo.lon,villageName+', '+state);
-      }else{
-        // Nominatim fail → backend khud try karega, village naam bhej do
-        $('village-hint').textContent=''; 
-        proceedWithGeo(null,null,villageName+', '+state);
+  if(cands.length){
+    cands.sort(function(a,b){return a.pos-b.pos;});
+    var firstPos=cands[0].pos,same=[],s;
+    for(s=0;s<cands.length;s++){if(cands[s].pos===firstPos){same.push(cands[s].t);}}
+    if(same.length>1){
+      for(var k=0;k<same.length;k++){
+        var d=String(same[k].district||'').toLowerCase();
+        if(d&&ql.indexOf(d)!==-1)return packTown(same[k]);
       }
-    });
-    return;
+    }
+    return packTown(same[0]);
   }
-  proceedWithGeo(city[1],city[2],city[0]+', '+state);
-  return;
-  function doGenerate(dob,time,state,placeName,lat,lon,btn){
+  var best=null;
+  for(var j=0;j<towns.length;j++){
+    var nm2=String(towns[j].name||'');
+    if(nm2.toLowerCase().indexOf(ql)===0){best=towns[j];break;}
+  }
+  if(best)return packTown(best);
+  return null;
+}
 
-  $('form-step').classList.add('hidden');
-  $('gen-step').classList.remove('hidden');
-  setProg(8,'ग्रहों की गणना हो रही है…');
-  var progTimer=setInterval(function(){
-    var w=parseFloat($('prog-bar').style.width)||8;
-    if(w<88){setProg(w+4,['नक्षत्र देखा जा रहा है…','दशा की गणना हो रही है…','योग बन रहे हैं…','उपाय लिखे जा रहे हैं…'][Math.floor(w/22)%4]);}
-  },2500);
+var nomCache={};
+function nominatim(q){
+  return new Promise(function(resolve){
+    if(nomCache[q]!==undefined){resolve(nomCache[q]);return;}
+    fetch('https://nominatim.openstreetmap.org/search?format=json&limit=1&accept-language=gu&q='+encodeURIComponent(q+', Gujarat, India'),{headers:{'Accept':'application/json'}})
+    .then(function(r){return r.ok?r.json():[];})
+    .then(function(arr){
+      var out=null;
+      if(arr&&arr.length){
+        var lat=parseFloat(arr[0].lat),lon=parseFloat(arr[0].lon);
+        if(isFinite(lat)&&isFinite(lon)){
+          var first=String(arr[0].display_name||'').split(',')[0].trim();
+          out={name:first||q,lat:lat,lon:lon};
+        }
+      }
+      nomCache[q]=out;resolve(out);
+    })
+    .catch(function(){nomCache[q]=null;resolve(null);});
+  });
+}
 
-  // Route A (manual WhatsApp delivery): Netlify Functions par Python nahi chalta,
-  // isliye server-generation hata diya. Customer ka janm-vivaran seller ko email se milega.
-  clearInterval(progTimer);
-  setProg(100,'पूरा!');
-  var mailSub=encodeURIComponent('Kundali details - '+CUST.phone);
-  var mailBody=encodeURIComponent('नमस्ते! मेरी कुंडली के लिए विवरण:\nनाम: '+CUST.name+'\nमोबाइल: '+CUST.phone+'\nजन्म तिथि: '+dob+'\nजन्म समय: '+time+'\nजन्म स्थान: '+placeName+' ('+state+')');
-  $('mail-btn').href='mailto:vijendraji51@gmail.com?subject='+mailSub+'&body='+mailBody;
-  $('gen-step').classList.add('hidden');
-  $('done-step').classList.remove('hidden');
-  } // end doGenerate
+function buildLists(){
+  var towns=window.KundaliTowns||[];
+  var dl=$('town-datalist'),frag=document.createDocumentFragment();
+  towns.forEach(function(t){
+    var o=document.createElement('option');o.value=t.name;frag.appendChild(o);
+  });
+  dl.appendChild(frag);
+  var sel=$('b-taluka');
+  var sorted=towns.slice().sort(function(a,b){
+    try{return String(a.name).localeCompare(String(b.name),'gu');}
+    catch(e){return String(a.name)<String(b.name)?-1:1;}
+  });
+  var ph=document.createElement('option');ph.value='';ph.textContent='— તાલુકો પસંદ કરો —';
+  sel.appendChild(ph);
+  sorted.forEach(function(t){
+    var o=document.createElement('option');
+    o.value=t.name;
+    o.textContent=t.name+(t.district?' ('+t.district+')':'');
+    o.setAttribute('data-district',t.district||'');
+    sel.appendChild(o);
+  });
+  sel.addEventListener('change',function(){
+    var o=sel.options[sel.selectedIndex];
+    $('b-district').textContent=o?(o.getAttribute('data-district')||'—'):'—';
+  });
+}
+
+function bdErr(m){var e=$('bd-err');e.textContent=m;e.style.display='block';e.scrollIntoView({block:'nearest',behavior:'smooth'});}
+function bdClearErr(){$('bd-err').style.display='none';}
+function validDate(v){
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(v))return false;
+  var p=v.split('-'),y=+p[0],m=+p[1],d=+p[2];
+  if(y<1900||y>2100||m<1||m>12||d<1||d>31)return false;
+  var dt=new Date(y,m-1,d);
+  if(dt.getFullYear()!==y||dt.getMonth()!==m-1||dt.getDate()!==d)return false;
+  if(dt>new Date())return false;
+  return true;
+}
+function resolveBox1(place){
+  return new Promise(function(resolve){
+    var t=findTown(place);
+    if(t){resolve(t);return;}
+    nominatim(place).then(function(res){resolve(res);});
+  });
+}
+
+function initBirthForm(){
+  buildLists();
+  try{var d=new Date();$('b-dob').setAttribute('max',d.toISOString().slice(0,10));}catch(e){}
+
+  /* type karte hi mile hue sthal ki pushti */
+  (function(){
+    var pi=$('b-place'),pf=$('place-found'),tm=null;
+    pi.addEventListener('input',function(){
+      pf.style.display='none';
+      if(tm)clearTimeout(tm);
+      tm=setTimeout(function(){
+        var v=pi.value.trim();
+        if(v.length<2)return;
+        var t=findTown(v);
+        if(t){
+          pf.textContent='📍 મળ્યું: '+t.name+(t.district?' ('+t.district+')':'')+' ✓';
+          pf.style.display='block';
+        }
+      },600);
+    });
+  })();
+
+  $('show-box2').addEventListener('click',function(e){
+    e.preventDefault();
+    $('box1').classList.add('hidden');$('box2').classList.remove('hidden');bdClearErr();
+  });
+  $('show-box1').addEventListener('click',function(e){
+    e.preventDefault();
+    $('box2').classList.add('hidden');$('box1').classList.remove('hidden');bdClearErr();
+  });
+
+  $('bd-btn').addEventListener('click',function(){
+    bdClearErr();
+    var dob=$('b-dob').value,time=$('b-time').value;
+    if(!validDate(dob)){bdErr('સાચી જન્મ તારીખ પસંદ કરો.');return;}
+    if(!/^\d{2}:\d{2}$/.test(time)){bdErr('જન્મ સમય પસંદ કરો (કલાક:મિનિટ).');return;}
+    var btn=this;btn.disabled=true;btn.textContent='તપાસી રહ્યા છીએ…';
+    var useBox2=!$('box2').classList.contains('hidden');
+
+    function submitBirth(place,lat,lon){
+      btn.textContent='કુંડળી બની રહી છે…';
+      postJSON('/.netlify/functions/submit-birth-details',
+        {payToken:K51_TOKEN,dob:dob,time:time,place:place,lat:lat,lon:lon})
+      .then(function(x){
+        if(x.s!==200||!x.j.token){throw new Error(x.j.error||'વિગતો સાચવવામાં ભૂલ થઈ.');}
+        K51_TOKEN=x.j.token;   // ab generation token
+        return postJSON('/.netlify/functions/verify-token',{token:K51_TOKEN});
+      })
+      .then(function(y){
+        if(y.s!==200||!y.j.valid||!y.j.payload)throw new Error('bad-token');
+        K51_BIRTH=y.j.payload;
+        $('birth-card').classList.add('hidden');
+        fillDetails(K51_BIRTH);
+        $('details-card').classList.remove('hidden');
+        $('gen-card').classList.remove('hidden');
+        $('gen-sub').textContent='પેમેન્ટ સફળ ✓ — હવે તમારી કુંડળી બની રહી છે';
+        generate();
+      })
+      .catch(function(e){btn.disabled=false;btn.textContent='કુંડળી બનાવો →';bdErr(e.message);});
+    }
+    function failPlace(){
+      btn.disabled=false;btn.textContent='કુંડળી બનાવો →';
+      bdErr('આ નામનું સ્થળ મળ્યું નહીં. સાચી જોડણીમાં લખો અથવા "યાદીમાં નથી" વિકલ્પ વાપરો.');
+    }
+
+    if(useBox2){
+      var village=$('b-village').value.trim();
+      var taluka=$('b-taluka').value;
+      if(village.length<2){btn.disabled=false;btn.textContent='કુંડળી બનાવો →';bdErr('કૃપા કરીને ગામનું નામ લખો.');return;}
+      if(!taluka){btn.disabled=false;btn.textContent='કુંડળી બનાવો →';bdErr('કૃપા કરીને તાલુકો પસંદ કરો.');return;}
+      var tt=findTown(taluka);
+      if(!tt){failPlace();return;}
+      submitBirth(village+', '+tt.name,tt.lat,tt.lon);
+      return;
+    }
+    var place=$('b-place').value.trim();
+    if(place.length<2){btn.disabled=false;btn.textContent='કુંડળી બનાવો →';bdErr('કૃપા કરીને જન્મ સ્થળ લખો.');return;}
+    resolveBox1(place).then(function(t){
+      if(t&&isFinite(t.lat)&&isFinite(t.lon)){submitBirth(t.name,t.lat,t.lon);return;}
+      failPlace();
+    });
+  });
+}
+
+function generate(){
+  if(!engineOK()){fail('એન્જિન લોડ થયું નથી. પેજ રિફ્રેશ કરી ફરી પ્રયાસ કરો.');return;}
+  if(!pdfOK()){fail('PDF એન્જિન લોડ થયું નથી. પેજ રિફ્રેશ કરી ફરી પ્રયાસ કરો.');return;}
+  var b=K51_BIRTH;
+  if(!b||!b.dob||!b.time||!isFinite(b.lat)||!isFinite(b.lon)){fail('જન્મ વિગતો અધૂરી છે. સપોર્ટનો સંપર્ક કરો.');return;}
+
+  // 1) token abhi bhi valid hai? (mudat poori ho gayi ho to rok do)
+  setProg(4,'લિંક તપાસી રહ્યા છીએ…');
+  postJSON('/.netlify/functions/verify-token',{token:K51_TOKEN})
+  .then(function(x){
+    if(x.s!==200||!x.j.valid)throw new Error('આ લિંક હવે માન્ય નથી (મુદત પૂરી થઈ ગઈ).');
+    // 2) chart compute karo
+    setProg(10,'ગ્રહોની ગણતરી થઈ રહી છે…');
+    var dp=String(b.dob).split('-'),tp=String(b.time).split(':');
+    var chart=window.KundaliEngine.computeChart({
+      year:parseInt(dp[0],10),month:parseInt(dp[1],10),day:parseInt(dp[2],10),
+      hour:parseInt(tp[0],10),minute:parseInt(tp[1],10),
+      lat:parseFloat(b.lat),lon:parseFloat(b.lon)});
+    if(!chart)throw new Error('કુંડળી ગણતરીમાં ભૂલ થઈ.');
+    var customer={name:b.name,
+      dateStr:g(dp[2]+'/'+dp[1]+'/'+dp[0]),
+      timeStr:g(tp[0]+':'+tp[1]),
+      placeName:b.place,
+      birth:{y:parseInt(dp[0],10),m:parseInt(dp[1],10),d:parseInt(dp[2],10)}};
+    // 3) PDF banao (browser me)
+    setProg(22,'PDF બની રહ્યું છે…');
+    return window.KundaliPDFKit.generateSankshipt(chart,customer,function(fr){
+      setProg(22+(fr||0)*70,'PDF બની રહ્યું છે…');
+    }).then(function(u8){return {u8:u8,chart:chart,customer:customer};});
+  })
+  .then(function(res){
+    if(!res.u8||!res.u8.length)throw new Error('PDF ખાલી બન્યું.');
+    // Blobs-free: token consume nahi hota — 24h expiry hi seema hai.
+    setProg(100,'થઈ ગયું!');
+    var blob=new Blob([res.u8],{type:'application/pdf'});
+    pdfName='Kundali-'+sanitizeName(res.customer.name)+'-Sankshipt-51.pdf';
+    var url=URL.createObjectURL(blob);
+    var dl=$('dl-btn');dl.href=url;dl.setAttribute('download',pdfName);dl.classList.remove('hidden');
+    $('wa-btn').classList.remove('hidden');
+    $('s-lagna').textContent=g(pick(res.chart,['lagna.rashi','lagna.rashi_idx']));
+    $('s-moon').textContent=g(pick(res.chart,['planets.Chandra.rashi']));
+    $('s-nakshatra').textContent=g(pick(res.chart,['planets.Chandra.nakshatra']));
+    $('s-dasha').textContent=g(pick(res.chart,['current_mahadasha.lord','current_mahadasha.name','current_mahadasha']));
+    $('gen-loading').style.display='none';
+    $('gen-done').classList.remove('hidden');
+    pdfMsg('ok','તમારી કુંડળી તૈયાર છે! ડાઉનલોડ કરો કે WhatsApp પર શેર કરો.');
+  })
+  .catch(function(e){
+    fail((e&&e.message)?String(e.message):'ભૂલ થઈ. પેજ રિફ્રેશ કરી ફરી પ્રયાસ કરો.');
+  });
+}
+
+$('wa-btn').addEventListener('click',function(){
+  var dl=$('dl-btn');
+  if(!dl.href){return;}
+  fetch(dl.href).then(function(r){return r.blob();}).then(function(blob){
+    var file;
+    try{file=new File([blob],pdfName,{type:'application/pdf'});}catch(e){file=null;}
+    if(file&&navigator.canShare&&navigator.canShare({files:[file]})){
+      navigator.share({files:[file],title:'જન્મકુંડળી',text:'મારી જન્મકુંડળી'}).catch(function(){});
+    }else{
+      var a=document.createElement('a');a.href=dl.href;a.download=pdfName;
+      document.body.appendChild(a);a.click();a.remove();
+      pdfMsg('ok','ડાઉનલોડ થઈ ગયું — હવે WhatsApp ખોલીને શેર કરો.');
+    }
+  });
 });
 
+// auto-start (saare engine scripts load hone ke baad)
 if(document.readyState==='complete'||document.readyState==='interactive'){start();}
 else{document.addEventListener('DOMContentLoaded',start);}
 })();

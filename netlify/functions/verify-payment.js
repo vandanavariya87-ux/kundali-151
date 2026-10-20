@@ -1,6 +1,7 @@
 // POST /.netlify/functions/verify-payment   { orderId, paymentId, signature }
-// 1) Razorpay signature verify  2) captured confirm  3) amount == 15100
-// → token (24h expiry) — payload me sirf name+phone. Birth details generate.html par.
+// 1) Razorpay signature verify  2) Razorpay se captured confirm  3) amount == 5100
+// → payment-PROOF token (24h expiry). Birth details ab isme NAHI hain —
+// wo generate.html ke form se aati hain (submit-birth-details → generation token).
 'use strict';
 const crypto = require('crypto');
 const { rzpayRequest, jsonOut, configured, signToken, PRICE_PAISE, TOKEN_EXPIRY_SEC } = require('./lib/token');
@@ -14,9 +15,6 @@ exports.handler = async (event) => {
   const orderId = String(input.orderId || '');
   const paymentId = String(input.paymentId || '');
   const signature = String(input.signature || '');
-  // Naam+phone frontend se (form me bhara tha) — sabse reliable
-  const inName = String(input.name || '').trim().slice(0, 60);
-  const inPhone = String(input.phone || '').trim();
   if (!orderId || !paymentId || !signature) return jsonOut(400, { error: 'Missing fields' });
 
   // 1) Signature: HMAC_SHA256(orderId|paymentId, key_secret)
@@ -39,25 +37,20 @@ exports.handler = async (event) => {
     return jsonOut(400, { error: 'Payment not captured yet' });
   }
 
-  // 3) Amount server-side fixed se match (15100 paise = ₹151)
+  // 3) Amount server-side fixed se match hona chahiye (5100 paise)
   if (Number(p.amount) !== PRICE_PAISE) return jsonOut(400, { error: 'Amount mismatch' });
 
-  // 4) Naam+phone: pehle frontend input se, fallback order notes se
-  let nm = inName, ph = inPhone;
-  if (!nm || !/^[6-9]\d{9}$/.test(ph)) {
-    try {
+  // 4) Naam/phone: Razorpay order notes se (create-order ne daale the)
+  let nm = '', ph = '';
+  try {
       const ro = await rzpayRequest('GET', '/v1/orders/' + encodeURIComponent(orderId));
       if (ro.status >= 200 && ro.status < 300 && ro.json.notes && typeof ro.json.notes === 'object') {
-        if (!nm) nm = String(ro.json.notes.name || '').trim().slice(0, 60);
-        if (!/^[6-9]\d{9}$/.test(ph)) ph = String(ro.json.notes.phone || '').trim();
+        nm = String(ro.json.notes.name || '').slice(0, 60);
+        ph = String(ro.json.notes.phone || '');
       }
-    } catch (e) { /* fallback fail — neeche validate hoga */ }
-  }
-  if (nm.length < 2 || !/^[6-9]\d{9}$/.test(ph)) {
-    return jsonOut(400, { error: 'Naam/phone missing — dobara order karein' });
-  }
+    } catch (e) { /* khaali rahenge */ }
 
-  // 5) Token — sirf naam+phone (birth details generate.html par bharenge)
+  // 5) Payment-proof token — birth details NAHI, sirf payment ka saboot
   const token = signToken({
     oid: orderId,
     pid: paymentId,

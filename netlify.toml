@@ -1,14 +1,8 @@
 [build]
   publish = "."
   functions = "netlify/functions"
-  command = "echo 'Build complete - functions will be bundled with pip install'"
 
-[functions]
-  # Python function ko zyada time do (PDF generation me 20-40 sec lag sakta hai)
-  [functions."generate-kundali"]
-    timeout = 60
-
-# Security headers
+# Security headers for the funnel pages
 [[headers]]
   for = "/*"
   [headers.values]
