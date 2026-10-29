@@ -3,17 +3,16 @@
 ## GIT DEPLOY (current method — manual zip/folder deploy does NOT run functions)
 - Repo: `vandanavariya87-ux/kundali-151`, branch `premium-kundali-499` (main branch = old ₹51 funnel, untouched).
 - Netlify site `kundali-51`: link this repo, Branch to deploy = `premium-kundali-499`, Build command = (empty), Publish = `.`, Functions = `netlify/functions` (netlify.toml already sets these).
-- Env vars on the SAME site: `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET`, `TOKEN_SECRET`.
+- Env vars on the SAME site (sirf 2): `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET`. (TOKEN_SECRET ki zaroorat nahi — token system hata diya gaya hai.)
 - After linking, verify: `/.netlify/functions/create-order` must NOT 404 (test with dummy data, no payment).
 - Manual drag-and-drop deploys are static-only and must NOT be used for this page — functions 404 on them (proven 2026-10-29).
 
 
 ## ✅ FINAL STATUS — Razorpay setup complete (2026-10-29)
 
-Payment ka poora setup code me final hai — ab sirf **tumhe Netlify me 3 variables add karne hain**, uske baad deploy + test:
+Payment ka poora setup code me final hai — ab sirf **tumhe Netlify me 2 variables add karne hain**, uske baad deploy + test:
 1. `RAZORPAY_KEY_ID` — Razorpay Dashboard → Settings → API Keys → Key ID
 2. `RAZORPAY_KEY_SECRET` — Razorpay Dashboard → Settings → API Keys → Key Secret
-3. `TOKEN_SECRET` — khud ka banaya hua lamba random text (sirf tumko pata ho)
 
 ⚠️ Variables add karne ke baad **Deploys → Trigger deploy → Deploy site** (fresh deploy ZARURI hai, bina iske functions ko vars nahi milenge). Secret values kabhi chat/file/repo me mat likhna — sirf Netlify ke Environment variables me.
 
@@ -82,13 +81,12 @@ milni chahiye ya **seller ke through** — us hisab se number badalna ho to
 
 ### Step 2: Environment variables (ZARURI)
 1. **Site settings → Environment variables → Add a variable**
-2. Ye 3 variables add karo:
+2. Ye 2 variables add karo:
 
 | Variable | Value kahan se |
 |---|---|
 | `RAZORPAY_KEY_ID` | Razorpay Dashboard → Settings → API Keys → Key ID |
 | `RAZORPAY_KEY_SECRET` | Razorpay Dashboard → Settings → API Keys → Key Secret |
-| `TOKEN_SECRET` | Khud banao — koi bhi lamba random text, jo sirf aapko pata ho |
 
 3. **Deploys → Trigger deploy → Deploy site** (env vars ke baad FRESH
    deploy zaruri hai!)

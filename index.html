@@ -472,8 +472,11 @@ html,body{overflow-x:clip}
     q.addEventListener('click', function(){ q.parentElement.classList.toggle('open'); });
   });
   // AM/PM toggle
-  $('m-am').addEventListener('click', function(){ S.ampm = 'AM'; fillStep2(); save(); });
-  $('m-pm').addEventListener('click', function(){ S.ampm = 'PM'; fillStep2(); save(); });
+  // AM/PM sirf apne buttons ka style badalta hai — fields ko dobara nahi bharta.
+  // (Pehle yahan fillStep2() call hota tha jo type ki hui DOB/time/city ko purani saved value se overwrite karke CLEAR kar deta tha.)
+  function setAmpm(v){ S.ampm = v; $('m-am').classList.toggle('on', v === 'AM'); $('m-pm').classList.toggle('on', v === 'PM'); save(); }
+  $('m-am').addEventListener('click', function(){ setAmpm('AM'); });
+  $('m-pm').addEventListener('click', function(){ setAmpm('PM'); });
   // Professional input masks: type karte waqt hi galat format block (unke page jaisa mask,
   // par galat value ko chupchap badla NAHI jayega — galat digit aate hi wapas pichhli sahi value)
   function maskDob(el){
@@ -494,8 +497,11 @@ html,body{overflow-x:clip}
     el.value = out;
     el.setAttribute('data-prev', out);
   }
-  $('m-dob').addEventListener('input', function(){ maskDob(this); });
-  $('m-btime').addEventListener('input', function(){ maskTime(this); });
+  // Type karte hi state me save (taaki koi bhi re-render typed values ko clear na kare)
+  $('m-dob').addEventListener('input', function(){ maskDob(this); S.dob = this.value; save(); });
+  $('m-btime').addEventListener('input', function(){ maskTime(this); S.btime = this.value; save(); });
+  $('m-city').addEventListener('input', function(){ S.city = this.value; save(); });
+  $('m-gender').addEventListener('change', function(){ S.gender = this.value; save(); });
   $('m-whatsapp').addEventListener('input', function(){
     var d = this.value.replace(/\D/g, '');
     if (d.indexOf('91') === 0) d = d.slice(0, 12); else d = d.slice(0, 10);
@@ -606,7 +612,7 @@ html,body{overflow-x:clip}
           });
           var vdata = null;
           try { vdata = await vres.json(); } catch (e) { vdata = null; }
-          if (!vres.ok || !vdata || !vdata.token) {
+          if (!vres.ok || !vdata || !vdata.ok) {
             throw new Error((vdata && (vdata.error || vdata.message)) || 'भुगतान की पुष्टि नहीं हो पाई।');
           }
           S.orderId = response.razorpay_order_id || ''; save();

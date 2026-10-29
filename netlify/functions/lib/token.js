@@ -1,55 +1,10 @@
 // lib/token.js — shared helpers for the Premium Personalised Kundali funnel.
-// Token format: base64url(payload_json) . hex_hmac_sha256(body, TOKEN_SECRET)
-// Verification is pure crypto: timing-safe HMAC compare + expiry + product check.
-// No server storage. Tokens expire after 24 hours.
+// No token system: payment verify hone par page seedha confirmation dikhata hai.
+// Sirf 2 env vars chahiye: RAZORPAY_KEY_ID + RAZORPAY_KEY_SECRET.
 'use strict';
-const crypto = require('crypto');
 
 const PRODUCT_ID = 'premium-kundali-499';
 const PRICE_PAISE = 50100; // Rs 501 — server-side FIXED, never taken from the client.
-const TOKEN_EXPIRY_SEC = 24 * 60 * 60;
-
-function hmacSecret() {
-  return process.env.TOKEN_SECRET || '';
-}
-
-function b64urlEnc(buf) {
-  return Buffer.from(buf).toString('base64')
-    .replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
-}
-function b64urlDec(s) {
-  s = String(s).replace(/-/g, '+').replace(/_/g, '/');
-  while (s.length % 4) s += '=';
-  return Buffer.from(s, 'base64');
-}
-
-function signToken(payload) {
-  const body = b64urlEnc(JSON.stringify(payload));
-  const sig = crypto.createHmac('sha256', hmacSecret()).update(body).digest('hex');
-  return body + '.' + sig;
-}
-
-function verifyToken(t) {
-  if (!t || !hmacSecret()) return null;
-  const parts = String(t).split('.');
-  if (parts.length !== 2) return null;
-  const body = parts[0], sig = parts[1];
-  let expected;
-  try {
-    expected = crypto.createHmac('sha256', hmacSecret()).update(body).digest('hex');
-  } catch (e) { return null; }
-  if (expected.length !== sig.length) return null;
-  const a = Buffer.from(expected, 'utf8'), b = Buffer.from(sig, 'utf8');
-  if (!crypto.timingSafeEqual(a, b)) return null;
-  let p;
-  try {
-    p = JSON.parse(b64urlDec(body).toString('utf8'));
-  } catch (e) { return null; }
-  if (!p || !p.exp || Date.now() > p.exp * 1000) return null;
-  if (!p.pid) return null;
-  if (p.prod !== PRODUCT_ID) return null;
-  return p;
-}
 
 // ---- Razorpay API helper (plain https, no SDK) ----
 function rzpayRequest(method, path, body) {
@@ -94,7 +49,7 @@ function jsonOut(statusCode, data) {
 function configured() {
   const id = process.env.RAZORPAY_KEY_ID || '';
   const sec = process.env.RAZORPAY_KEY_SECRET || '';
-  return id !== '' && sec !== '' && hmacSecret() !== '';
+  return id !== '' && sec !== '';
 }
 
 // Normalise an Indian mobile number: strips spaces and a leading +91 / 91.
@@ -116,8 +71,7 @@ function validEmail(raw) {
 }
 
 module.exports = {
-  PRODUCT_ID, PRICE_PAISE, TOKEN_EXPIRY_SEC,
-  signToken, verifyToken,
+  PRODUCT_ID, PRICE_PAISE,
   rzpayRequest, jsonOut, configured,
   normaliseWhatsapp, validEmail,
 };

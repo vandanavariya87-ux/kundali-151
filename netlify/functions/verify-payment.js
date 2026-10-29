@@ -5,13 +5,12 @@
 //   1) Razorpay signature (HMAC-SHA256 with RAZORPAY_KEY_SECRET)
 //   2) Payment is captured on Razorpay and belongs to this order
 //   3) Captured amount equals the server-side fixed 50100 paise
-// On success only: an HMAC token (TOKEN_SECRET, 24h expiry) encoding the
-// product id, order id and customer name / WhatsApp / email.
-// On any failure: a clear error, never a token.
+// On success only: { ok: true } — page isi se confirmation dikhata hai.
+// On any failure: a clear error.
 'use strict';
 const crypto = require('crypto');
-const { rzpayRequest, jsonOut, configured, signToken, PRICE_PAISE,
-  PRODUCT_ID, TOKEN_EXPIRY_SEC, normaliseWhatsapp, validEmail } = require('./lib/token');
+const { rzpayRequest, jsonOut, configured, PRICE_PAISE,
+  PRODUCT_ID, normaliseWhatsapp, validEmail } = require('./lib/token');
 
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') return jsonOut(405, { error: 'Method not allowed' });
@@ -67,17 +66,6 @@ exports.handler = async (event) => {
   }
   if (em === null) em = '';
 
-  // 5) Token — product id + order id + customer details, 24h expiry
-  const token = signToken({
-    prod: PRODUCT_ID,
-    oid: orderId,
-    pid: paymentId,
-    amt: p.amount,
-    nm: nm,
-    wa: wa,
-    em: em,
-    nonce: crypto.randomBytes(8).toString('hex'),
-    exp: Math.floor(Date.now() / 1000) + TOKEN_EXPIRY_SEC,
-  });
-  return jsonOut(200, { token });
+  // 5) Verified — koi token nahi; page ok dekh kar confirmation dikhata hai
+  return jsonOut(200, { ok: true, order_id: orderId, payment_id: paymentId });
 };
