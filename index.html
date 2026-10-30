@@ -177,6 +177,23 @@ html,body{overflow-x:clip}
   .free-chat{font-size:14px}
 }
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1106631478943908');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1106631478943908&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 <div class="page-stars" aria-hidden="true"><span class="pg pg1"></span><span class="pg pg2"></span><span class="ps" style="top:6%;left:12%;animation-delay:0s"></span><span class="ps" style="top:10%;left:85%;animation-delay:.5s"></span><span class="ps" style="top:16%;left:45%;animation-delay:1s"></span><span class="ps" style="top:24%;left:70%;animation-delay:1.5s"></span><span class="ps" style="top:30%;left:20%;animation-delay:.3s"></span><span class="ps" style="top:38%;left:90%;animation-delay:1.8s"></span><span class="ps" style="top:44%;left:55%;animation-delay:.8s"></span><span class="ps" style="top:52%;left:10%;animation-delay:2.1s"></span><span class="ps" style="top:58%;left:75%;animation-delay:.4s"></span><span class="ps" style="top:66%;left:35%;animation-delay:1.3s"></span><span class="ps" style="top:72%;left:88%;animation-delay:1.9s"></span><span class="ps" style="top:78%;left:15%;animation-delay:.7s"></span><span class="ps" style="top:84%;left:60%;animation-delay:2.4s"></span><span class="ps" style="top:90%;left:40%;animation-delay:1.1s"></span><span class="ps" style="top:95%;left:80%;animation-delay:.2s"></span><span class="ps" style="top:13%;left:62%;animation-delay:2.7s"></span></div>
@@ -624,6 +641,8 @@ html,body{overflow-x:clip}
             + '\nजन्म तारीख: ' + S.dob + '\nजन्म समय: ' + S.btime + ' ' + S.ampm + '\nलिंग: ' + S.gender + '\nजन्म स्थान: ' + S.city
             + '\nकृपया मेरी रिपोर्ट 24 घंटे के अंदर भेजें।';
           $('m-wa').href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
+                    // Meta Purchase — sirf server-verified payment ke baad (verify ok ke baad hi)
+          try { if (window.fbq) fbq('track', 'Purchase', {value: 501, currency: 'INR'}); } catch (e) {}
           showStep(3);
         } catch (e) {
           payBtn.disabled = false; payBtn.textContent = 'Pay Now — ₹501 →';
